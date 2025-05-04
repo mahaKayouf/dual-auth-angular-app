@@ -1,0 +1,56 @@
+<div class="profile-container">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>User Profile</mat-card-title>
+      </mat-card-header>
+      
+      <mat-card-content *ngIf="currentUser">
+        <div class="profile-section">
+          <h3>Personal Information</h3>
+          <div class="profile-field">
+            <span class="field-label">Name:</span>
+            <span class="field-value">{{ currentUser.name }}</span>
+          </div>
+          <div class="profile-field">
+            <span class="field-label">Email:</span>
+            <span class="field-value">{{ currentUser.email }}</span>
+          </div>
+          <div class="profile-field">
+            <span class="field-label">User ID:</span>
+            <span class="field-value">{{ currentUser.id }}</span>
+          </div>
+        </div>
+        
+        <div class="profile-section">
+          <h3>Roles and Permissions</h3>
+          <div class="profile-field">
+            <span class="field-label">Roles:</span>
+            <span class="field-value">{{ currentUser.roles.join(', ') || 'No roles assigned' }}</span>
+          </div>
+          <div class="profile-field">
+            <span class="field-label">Admin Access:</span>
+            <span class="field-value">{{ isAdmin ? 'Yes' : 'No' }}</span>
+          </div>
+        </div>
+        
+        <div class="profile-section">
+          <h3>Authentication Information</h3>
+          <div class="profile-field">
+            <span class="field-label">Provider:</span>
+            <span class="field-value">{{ authProvider }}</span>
+          </div>
+        </div>
+      </mat-card-content>
+      
+      <mat-card-content *ngIf="!currentUser">
+        <div class="loading-container">
+          <mat-spinner diameter="40"></mat-spinner>
+          <p>Loading user profile...</p>
+        </div>
+      </mat-card-content>
+      
+      <mat-card-actions>
+        <button mat-button routerLink="/">Back to Home</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>

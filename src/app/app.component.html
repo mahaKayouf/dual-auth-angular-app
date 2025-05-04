@@ -1,0 +1,49 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #sidenav mode="over" class="sidenav">
+    <mat-nav-list>
+      <a mat-list-item routerLink="/" (click)="sidenav.close()">
+        <mat-icon>home</mat-icon>
+        <span class="nav-link-text">Home</span>
+      </a>
+      
+      <ng-container *ngIf="isAuthenticated">
+        <a mat-list-item routerLink="/profile" (click)="sidenav.close()">
+          <mat-icon>person</mat-icon>
+          <span class="nav-link-text">Profile</span>
+        </a>
+        
+        <a mat-list-item routerLink="/configuration" (click)="sidenav.close()" *ngIf="isAdmin">
+          <mat-icon>settings</mat-icon>
+          <span class="nav-link-text">Configuration</span>
+        </a>
+        
+        <a mat-list-item (click)="logout(); sidenav.close()">
+          <mat-icon>exit_to_app</mat-icon>
+          <span class="nav-link-text">Logout</span>
+        </a>
+      </ng-container>
+      
+      <ng-container *ngIf="!isAuthenticated">
+        <a mat-list-item routerLink="/login" (click)="sidenav.close()">
+          <mat-icon>login</mat-icon>
+          <span class="nav-link-text">Login</span>
+        </a>
+      </ng-container>
+    </mat-nav-list>
+  </mat-sidenav>
+  
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button mat-icon-button (click)="sidenav.toggle()" aria-label="Toggle sidenav">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Auth PWA App</span>
+      <span class="toolbar-spacer"></span>
+      <span *ngIf="isAuthenticated" class="user-name">{{ userName }}</span>
+    </mat-toolbar>
+    
+    <div class="content-container">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

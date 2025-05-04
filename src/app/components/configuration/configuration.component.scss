@@ -1,0 +1,63 @@
+.config-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .admin-message {
+    display: flex;
+    align-items: center;
+    background-color: #e8f5e9;
+    padding: 16px;
+    border-radius: 4px;
+    margin-bottom: 24px;
+    
+    mat-icon {
+      color: #4caf50;
+      margin-right: 16px;
+      font-size: 24px;
+      height: 24px;
+      width: 24px;
+    }
+    
+    p {
+      margin: 0;
+    }
+  }
+  
+  .config-section {
+    margin-bottom: 24px;
+    
+    h3 {
+      margin-bottom: 12px;
+      color: #3f51b5;
+      border-bottom: 1px solid #e0e0e0;
+      padding-bottom: 8px;
+    }
+    
+    ul {
+      padding-left: 20px;
+    }
+  }
+  
+  .config-item {
+    margin-bottom: 12px;
+    
+    .config-label {
+      font-weight: 500;
+      display: block;
+      margin-bottom: 4px;
+    }
+    
+    .config-value {
+      display: block;
+    }
+    
+    .config-code {
+      background-color: #f5f5f5;
+      padding: 12px;
+      border-radius: 4px;
+      overflow: auto;
+      font-family: monospace;
+      margin: 0;
+    }
+  }

@@ -1,0 +1,27 @@
+<div class="home-container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Welcome to Auth PWA App</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>This is a Progressive Web Application with authentication support for both Azure AD and Keycloak.</p>
+      <p>Current authentication provider: <strong>{{ authProvider }}</strong></p>
+      
+      <div *ngIf="!isAuthenticated" class="auth-actions">
+        <button mat-raised-button color="primary" (click)="login()">Login</button>
+      </div>
+      
+      <div *ngIf="isAuthenticated" class="user-info">
+        <h3>You are logged in as:</h3>
+        <p><strong>Name:</strong> {{ currentUser?.name }}</p>
+        <p><strong>Email:</strong> {{ currentUser?.email }}</p>
+        <p><strong>Roles:</strong> {{ currentUser?.roles?.join(', ') }}</p>
+        
+        <div class="navigation-links">
+          <button mat-raised-button color="primary" routerLink="/profile">Go to Profile</button>
+          <button mat-raised-button color="accent" routerLink="/configuration" *ngIf="isAdmin">Go to Configuration</button>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -1,0 +1,52 @@
+.profile-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .profile-section {
+    margin-bottom: 24px;
+    
+    h3 {
+      margin-bottom: 12px;
+      color: #3f51b5;
+      border-bottom: 1px solid #e0e0e0;
+      padding-bottom: 8px;
+    }
+  }
+  
+  .profile-field {
+    display: flex;
+    margin-bottom: 8px;
+    
+    .field-label {
+      font-weight: 500;
+      width: 120px;
+      flex-shrink: 0;
+    }
+    
+    .field-value {
+      flex-grow: 1;
+    }
+  }
+  
+  .loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    
+    p {
+      margin-top: 16px;
+    }
+  }
+  
+  @media (max-width: 599px) {
+    .profile-field {
+      flex-direction: column;
+      
+      .field-label {
+        width: 100%;
+        margin-bottom: 4px;
+      }
+    }
+  }

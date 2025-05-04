@@ -1,0 +1,54 @@
+<div class="config-container">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Admin Configuration</mat-card-title>
+        <mat-card-subtitle>Manage application settings</mat-card-subtitle>
+      </mat-card-header>
+      
+      <mat-card-content>
+        <div class="admin-message">
+          <mat-icon>admin_panel_settings</mat-icon>
+          <p>Welcome to the admin configuration panel. This area is restricted to users with admin privileges.</p>
+        </div>
+        
+        <div class="config-section">
+          <h3>Authentication Settings</h3>
+          <div class="config-item">
+            <span class="config-label">Current Provider:</span>
+            <span class="config-value">{{ authProvider }}</span>
+          </div>
+          
+          <div class="config-item">
+            <span class="config-label">Provider Configuration:</span>
+            <pre class="config-code">{{ providerConfig | json }}</pre>
+          </div>
+        </div>
+        
+        <div class="config-section">
+          <h3>User Management</h3>
+          <p>This section would typically contain user management functionality such as:</p>
+          <ul>
+            <li>User listing and search</li>
+            <li>Role assignment</li>
+            <li>Account status management</li>
+            <li>Permission configuration</li>
+          </ul>
+        </div>
+        
+        <div class="config-section">
+          <h3>Application Settings</h3>
+          <p>This section would typically contain application configuration such as:</p>
+          <ul>
+            <li>Feature flag management</li>
+            <li>Application behavior settings</li>
+            <li>Integration configuration</li>
+            <li>Notification settings</li>
+          </ul>
+        </div>
+      </mat-card-content>
+      
+      <mat-card-actions>
+        <button mat-button routerLink="/">Back to Home</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
